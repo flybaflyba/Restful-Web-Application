@@ -149,6 +149,30 @@ router.patch('/products/:productId',function(req,res){
         res.json({success:true,message:"更新成功"})
         */
     })
+
+    
+
+
+// 删除一个
+router.delete('/products/:productId',function(req,res){
+        console.log('delete product');
+        Product.findByIdAndRemove(req.params.productId)
+                .then(product => {
+                    if(!product) {
+                        return res.status(404).send({
+                            message: "Product not found with id " + req.params.productId
+                        });            
+                    }
+                    res.send({message: "Product deleted successfully!"});
+                }).catch(err => {
+                    if(err.kind === 'ObjectId') {
+                        return res.status(404).send({
+                            message: "Product not found with id " + req.params.productId
+                        });                
+                    }
+                
+                });
+    })
     
 
 module.exports = router;
