@@ -70,5 +70,28 @@ router.get('/products',function(_req,res){
     })
 
 
+// 查看一个
+router.get('/products/:productId',function(req,res){
+        //res.send("This is a signle product: " + req.params.productId)
+        Product.findById(req.params.productId)
+        .then(product => {
+            if(!product) {
+                return res.status(404).send({
+                    message: "Product not found with id " + req.params.productId
+                });            
+            }
+            res.send(product);
+        }).catch(err => {
+            if(err.kind === 'ObjectId') {
+                return res.status(404).send({
+                    message: "Product not found with id " + req.params.productId
+                });                
+            }
+            
+        });
+        
+    })
+
+    
 
 module.exports = router;
