@@ -42,8 +42,8 @@ app.get('/',function(req,res){
 
 //
 //for product: 
-//var setupRoute = require('./app/routes/product.route');// 导入路由文件
-//app.use('/',setupRoute);   //设置访问路径
+var setupRoute = require('./app/routes/product.route');// 导入路由文件
+app.use('/',setupRoute);   //设置访问路径
 //
 
 var port = process.env.PORT || 8080; // 设置启动端口
