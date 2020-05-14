@@ -1,0 +1,23 @@
+{
+  "name": "05202020-express-serves-an-api",
+  "version": "1.0.0",
+  "description": "Express serves an API",
+  "main": "index.js",
+  "scripts": {
+    "test": "nothing here "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BYUHCS490R/final-project-flybaflyba.git"
+  },
+  "keywords": [
+    "nothing",
+    "here"
+  ],
+  "author": "Litian Zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BYUHCS490R/final-project-flybaflyba/issues"
+  },
+  "homepage": "https://github.com/BYUHCS490R/final-project-flybaflyba#readme"
+}
