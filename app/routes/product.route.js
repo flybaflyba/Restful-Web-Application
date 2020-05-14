@@ -173,6 +173,14 @@ router.delete('/products/:productId',function(req,res){
                 
                 });
     })
-    
+
+
+//删除全部
+router.delete('/products',function(req,res){
+    console.log('delete all products');
+    Product.collection.deleteMany();
+    res.send({message: "All product deleted successfully!"});
+            
+})
 
 module.exports = router;
