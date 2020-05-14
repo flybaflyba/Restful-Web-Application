@@ -32,6 +32,8 @@ app.use(bodyParser.json());
 // 使用 morgan 将请求日志打印到控制台
 app.use(morgan('dev'));
 
+
+
 //路由
 //基础路由
 app.get('/',function(req,res){
