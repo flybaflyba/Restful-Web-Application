@@ -53,7 +53,21 @@ router.use( (rep, res, next) => {
 });
 
 
-
+// 查看所有
+router.get('/products',function(_req,res){
+    /*
+        var myDate = new Date();
+        var date=myDate.toLocaleDateString( );// 获取日期与时间
+    */
+        Product.find({},function(_err,products){
+            //res.json({
+            //    success:true,
+            //    data:products
+            //})
+            //res.json(products)
+            res.send(products)
+        })
+    })
 
 
 
