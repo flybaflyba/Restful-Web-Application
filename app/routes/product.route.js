@@ -59,15 +59,25 @@ router.get('/products',function(_req,res){
         var myDate = new Date();
         var date=myDate.toLocaleDateString( );// 获取日期与时间
     */
-        Product.find({},function(_err,products){
+      
+        Product.find({},function(err,products){
             //res.json({
             //    success:true,
             //    data:products
             //})
             //res.json(products)
+            
             res.send(products)
+           
         })
     })
+
+    router.get('/testapi',function(req,res){
+
+        res.send({message:"Test API is working"})
+       
+        })
+    
 
 
 // 查看一个
