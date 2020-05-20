@@ -5,7 +5,8 @@ var morgan = require('morgan');
 var jwt = require('jsonwebtoken');//用来创建和确认用户信息摘要
 
 
-//一些配置
+/*
+//配置数据库
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
@@ -23,9 +24,10 @@ mongoose.connect(dbConfig.database, {
     process.exit();
 });
 
-
-
 app.set('superSecret', dbConfig.secret); // 设置app 的超级密码--用来生成摘要的密码
+
+*/
+
 //用body parser 来解析post和url信息中的参数
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
@@ -50,3 +52,6 @@ var port = process.env.PORT || 8080; // 设置启动端口
 // 启动服务
 app.listen(port);
 console.log('Magic happens at http://localhost:' + port);
+
+
+
