@@ -9,8 +9,7 @@ services:
             - ./:/usr/src/app
         depends_on: 
             - mongo
-        
-
+            
     mongo:
         image: mongo:latest
         ports: 
@@ -20,5 +19,4 @@ services:
 
 
 
-            
             
