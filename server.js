@@ -5,7 +5,7 @@ var morgan = require('morgan');
 var jwt = require('jsonwebtoken');//用来创建和确认用户信息摘要
 
 
-/*
+
 //配置数据库
 // Configuring the database
 const dbConfig = require('./config/database.config.js');
@@ -26,13 +26,14 @@ mongoose.connect(dbConfig.database, {
 
 app.set('superSecret', dbConfig.secret); // 设置app 的超级密码--用来生成摘要的密码
 
-*/
+
 
 //用body parser 来解析post和url信息中的参数
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 // 使用 morgan 将请求日志打印到控制台
 app.use(morgan('dev'));
+
 
 
 
