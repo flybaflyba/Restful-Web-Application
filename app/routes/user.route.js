@@ -35,6 +35,9 @@ router.patch('/users/update',function(req,res){
     //res.json({message: "hello1"})
     
 
+    //user can update their own accounts 
+    //by providing the email and cooresponding old password 
+    //they can update all fields, except role. 
     User.findOne({email: req.body.email}, function(err, user) {
         if (err) throw err;
         if (!user) {
