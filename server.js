@@ -9,10 +9,12 @@ var routes = require('./app/routes/index.routes');// 导入路由文件
 
 //const passport = require('./configs/passport');
 
+//get passport
 const passport = require('passport');
 
 //const passport;
 
+//get our passport 
 require('./configs/passport')(passport)
 
 //配置数据库
@@ -32,6 +34,8 @@ mongoose.connect(dbConfig.database, {
     
     app.use("/api/auth", routes.auth)
     //app.use("/api/users", passport.authenticate('jwt', {session : false}), routes.products)
+    
+    //passport.authenticate will only allow our users to access these pages 
     app.use("/api", passport.authenticate('jwt', {session : false}), routes.products)  //设置访问路径
     app.use("/api", passport.authenticate('jwt', {session : false}), routes.users)
 
