@@ -344,6 +344,7 @@ router.delete('/products/:productId',function(req,res){
     //can not compare object id with ==
     //if (req.user._id == product.author._id) {
 
+    //only product owner or admin can delete one product 
     if (req.user._id.equals(product.author._id) || req.user.checkAdmin(req.user.role)) {
         console.log("yes")
         //res.json({message: "Current user IS owner" + "||" + req.user._id + "||" + product.author._id})
