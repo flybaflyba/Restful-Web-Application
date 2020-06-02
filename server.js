@@ -37,6 +37,8 @@ mongoose.connect(dbConfig.database, {
     
     //passport.authenticate will only allow our users to access these pages 
     app.use("/api", passport.authenticate('jwt', {session : false}), routes.products)  //设置访问路径
+    
+    //the following line adds possport pretection to admin page
     app.use("/api", passport.authenticate('jwt', {session : false}), routes.users)
 
     var port = process.env.PORT || 8080 // 设置启动端口    
