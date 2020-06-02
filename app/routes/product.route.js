@@ -412,6 +412,7 @@ router.delete('/products/:productId',function(req,res){
 router.delete('/products',function(req,res){
     console.log('delete all products');
 
+//only admin can delete all products at once 
 if (req.user.checkAdmin(req.user.role)) {
 
     Product.collection.deleteMany()
