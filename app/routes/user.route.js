@@ -54,7 +54,12 @@ router.patch('/users/update',function(req,res){
                         user_name: req.body.user_name, 
                         last_name: req.body.last_name, 
                         first_name: req.body.first_name,
-                        updated_date: date
+                        updated_date: date,
+
+                        //manually create owner and admin 
+                        //role: req.body.role 
+
+
                     })
                    
                     user.save()
