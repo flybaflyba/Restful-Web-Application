@@ -213,6 +213,7 @@ router.patch('/products/:productId',function(req,res){
         product.link= req.body.link;
         product.updated_date= date;
         
+        product.save()
         res.status(200)
         res.send({message: "Product Updated", product});
         
