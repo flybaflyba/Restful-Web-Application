@@ -28,7 +28,8 @@ const UserSchema = mongoose.Schema({
     
 });
 
-
+//create this method so that we hash the password to store 
+//it's more secure this way 
 UserSchema.pre('save', async function(next) {
     if (this.isModified('password') || this.isNew) {
         console.log("password being hashed here");
@@ -41,6 +42,7 @@ UserSchema.pre('save', async function(next) {
     }
 })
 
+//create this method to compare the password provided and the original password 
 UserSchema.methods.comparePassword = function(password, cb) {
     bcrypt.compare(password, this.password, (err, isMatch) => {
         if (err) {
