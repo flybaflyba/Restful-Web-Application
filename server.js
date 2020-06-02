@@ -24,7 +24,7 @@ mongoose.connect(dbConfig.database, {
     process.exit();
 });
 
-app.set('superSecret', dbConfig.secret); // 设置app 的超级密码--用来生成摘要的密码
+//app.set('superSecret', dbConfig.secret); // 设置app 的超级密码--用来生成摘要的密码
 
 
 
