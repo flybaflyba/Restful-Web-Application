@@ -53,6 +53,8 @@ UserSchema.methods.comparePassword = function(password, cb) {
 
 }
 
+//this method checks if current user is an admin 
+//if so, extral permission is given 
 UserSchema.methods.checkAdmin = function(role) {
     if (role == 'admin' || role == "owner") {
         return true
