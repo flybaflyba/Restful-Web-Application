@@ -332,6 +332,7 @@ router.patch('/admin/users/:userId',function(req,res){
        
 
 
+    //Update user.route.js, admin can edit a user, including changing its role
     if (req.user.checkAdmin(req.user.role)) {
         //res.json({message:"im admin!"})
         User.findById(req.params.userId)
