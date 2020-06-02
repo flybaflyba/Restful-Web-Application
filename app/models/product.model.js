@@ -15,6 +15,7 @@ const ProductSchema = mongoose.Schema({
     //user_id: String, 
     list_id: String,
 
+//we link out products and their authors through this one to many relation ship 
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
