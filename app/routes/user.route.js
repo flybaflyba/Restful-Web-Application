@@ -230,6 +230,7 @@ router.get('/admin/users',function(req,res){
     */
 
 
+    //Update user.route.js, admin can view all users 
    if (req.user.checkAdmin(req.user.role)) {
     //res.json({message:"im admin!"})
     User.find({})
