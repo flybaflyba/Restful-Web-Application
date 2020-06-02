@@ -177,6 +177,7 @@ router.get('/admin/users/:userId',function(req,res){
 
     //res.json({message:User.findById(req.params.userId).role})
 
+    //Update user.route.js, admin can view a user's info by puting it's id in url path
     if (req.user.checkAdmin(req.user.role)) {
 
             User.findById(req.params.userId)
