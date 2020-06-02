@@ -261,6 +261,7 @@ router.get('/admin/users',function(req,res){
 // 删除一个
 router.delete('/admin/users/:userId',function(req,res){
 
+    //Update user.route.js, admin can delete a user
     if (req.user.checkAdmin(req.user.role)) {
         //res.json({message:"im admin!"})
         console.log('delete user');
