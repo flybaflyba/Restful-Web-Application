@@ -177,7 +177,8 @@ router.patch('/products/:productId',function(req,res){
     //res.json({message: res.user})
 
      Product.findById(req.params.productId)
-        //.populate('author', 'email')
+    //this populate will show author's email when we get one product 
+        .populate('author', 'email')
         .then(product => {
             if(!product) {
                 return res.status(404).send({
