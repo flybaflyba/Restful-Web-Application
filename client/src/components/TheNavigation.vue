@@ -33,6 +33,7 @@
 #nav ul {
     list-style-type: none;
 }
+
 #nav a {
   text-decoration: none;
   font-weight: bold;
@@ -45,6 +46,10 @@
 
 .nav-links {
     display: flex;
+    
+    background-color:white;
+
+    display: inline-flex;
     
 }
 
