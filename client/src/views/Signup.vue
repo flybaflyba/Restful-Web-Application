@@ -1,25 +1,37 @@
 <template>
   <div class="signup">
     <h1>Signup</h1>
+    
 
     <form class="signUpForm" @submit.prevent="handleSignup">
         <div v-if="message" id="message">{{ message }}</div>
 
         <div class="form_row">
-            <label for="user_name">User Name </label>
+            <label for="last_name">Last Name </label>
+            <input type="last_name" name="last_name" v-model="last_name" />
+        </div>
+
+        <div class="form_row">
+            <label for="first_name">First Name </label>
+            <input type="first_name" name="first_name" v-model="first_name" />
+        </div>
+
+        <div class="form_row">
+            <label for="user_name">User Name* </label>
             <input type="user_name" name="user_name" v-model="user_name" />
         </div>
-        
+
         <div class="form_row">
-            <label for="email">Email </label>
+            <label for="email">Email* </label>
             <input type="email" name="email" v-model="email" />
         </div>
 
         <div class="form_row">
-            <label for="password">Password </label>
+            <label for="password">Password* </label>
             <input type="password" name="password" v-model="password" />
         </div>
         
+        <p>Required fields are marked with *</p>
         <div class="form_row">
             <button :disabled="submitted">
                 <span>Sign Up</span>
@@ -44,6 +56,8 @@ export default {
         email: "",
         password: "",
         user_name: "",
+        last_name: "",
+        first_name: "",
     }
     },
     methods: {
@@ -55,6 +69,8 @@ export default {
                 email: this.email,
                 password: this.password,
                 user_name: this.user_name,
+                last_name: this.last_name,
+                first_name: this.first_name,
 
             }
 
