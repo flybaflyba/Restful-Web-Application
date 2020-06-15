@@ -45,7 +45,7 @@ router.post('/products',function(req,res){
     var created_date= date;
     //var updated_date= req.body.updated_date;
     //var user_id= req.body.user_id;
-    var list_id= req.body.list_id;
+    //var list_id= req.body.list_id;
 
     
     console.log(req);
@@ -61,7 +61,7 @@ router.post('/products',function(req,res){
         created_date:created_date,
         //updated_date:updated_date,
         //user_id:user_id,
-        list_id:list_id,
+        //list_id:list_id,
         author: req.user._id
     })
 

@@ -13,7 +13,7 @@ const ProductSchema = mongoose.Schema({
     created_date: String, 
     updated_date: String, 
     //user_id: String, 
-    list_id: String,
+    //list_id: String,
 
 //we link out products and their authors through this one to many relation ship 
     author: {

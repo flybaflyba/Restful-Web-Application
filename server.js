@@ -1,7 +1,9 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var morgan = require('morgan');
+var morgan = require('morgan');
+var cors = require("cors");
+
 var jwt = require('jsonwebtoken');//用来创建和确认用户信息摘要
 
 //for all routes: 
@@ -30,6 +32,7 @@ mongoose.connect(dbConfig.database, {
     useUnifiedTopology: true
 }).then(() => {
     
+    app.use(cors());
 
     
     app.use("/api/auth", routes.auth)
@@ -41,7 +44,7 @@ mongoose.connect(dbConfig.database, {
     //the following line adds possport pretection to admin page
     app.use("/api", passport.authenticate('jwt', {session : false}), routes.users)
 
-    var port = process.env.PORT || 8080 // 设置启动端口    
+    var port = process.env.PORT || 3000 // 设置启动端口    
     // 启动服务
     app.listen(port)
     console.log("Successfully connected to the database")

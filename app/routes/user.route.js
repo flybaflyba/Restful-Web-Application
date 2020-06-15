@@ -27,7 +27,7 @@ router.get('/users/testapi',function(req,res){
 
 
 // 更新
-router.patch('/users/update',function(req,res){
+router.patch('/users',function(req,res){
 
         var myDate = new Date();
         var date=myDate.toLocaleDateString( );// 获取日期与时间
