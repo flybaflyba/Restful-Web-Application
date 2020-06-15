@@ -300,7 +300,7 @@ router.delete('/admin/users/:userId',function(req,res){
 
 
 
-/*
+
 //删除全部
 router.delete('/admin/users',function(req,res){
         console.log('delete all users');
@@ -318,7 +318,7 @@ router.delete('/admin/users',function(req,res){
     })
 
 
-*/
+
 
 
 
