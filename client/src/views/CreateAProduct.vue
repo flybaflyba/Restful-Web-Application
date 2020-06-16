@@ -7,6 +7,8 @@
     <form class="createNewProductForm" @submit.prevent="handleCreateNewProduct">
 
         <div v-if="message" id="message">{{ message }}</div>
+        <router-link v-if="this.message" :to="{name:'Products'}"> View All Products </router-link>
+
 
         <div class="form_row">
             <label for="product_name">Product Name: </label>
