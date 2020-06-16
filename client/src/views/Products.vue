@@ -70,7 +70,7 @@ export default {
 
 <style scoped>
 .product {
-    padding: 50px;
-    font-size: 50px;
+    padding: 30px;
+    font-size: 30px;
 }
 </style>

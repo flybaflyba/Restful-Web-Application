@@ -8,9 +8,18 @@
     <p> Created on: {{ product.created_date }}</p>
     <p> Updated on: {{ product.updated_date }}</p>
     
-    <p> Link: {{ product.link }}</p>
+    <!-- 
+    <p> Link: {{ product.link }}</p> 
+    -->
     
+    <p @click="See(product.link)">See it on Amazon</p>
+    
+    <!-- 
     <p> Image link: {{ product.image }}</p>
+    -->
+
+    <p> <img class="img" :src= product.image  alt="Image not load" > </p>
+
 
     <p> Description: {{ product.description }}</p>
 
@@ -29,9 +38,12 @@ export default {
         return {
             product: {},
             message: "Loading Single Product",
+           
         }
     },
     computed: {
+
+
 
         // destination() {
         //     return store.destinations.find(
@@ -66,5 +78,18 @@ export default {
             this.message = "You must login first";
         }
     },
+
+    methods: {
+         See (e) {
+        window.location.href = e;
+      }
+    },
+    
 }
 </script>
+
+<style scoped>
+.img {
+    max-height: 200px;
+}
+</style>
