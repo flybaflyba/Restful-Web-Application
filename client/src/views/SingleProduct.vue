@@ -1,7 +1,17 @@
 <template>
 <div>
     <h1>This is a single product view</h1>
+    <div class="message" v-if="this.message">
+            {{ this.message }}
+        </div>
     
+
+    <div v-if="this.deleteMessage">
+            {{ this.deleteMessage }}
+        </div>
+    <button @click="deleteOneProduct()"> Delete this product </button>
+
+
     <h2>Product Name: {{ product.product_name }}</h2>
 
     <p> Price: {{ product.price }}</p>
@@ -38,6 +48,9 @@ export default {
         return {
             product: {},
             message: "Loading Single Product",
+            deleteMessage: "",
+            
+            
            
         }
     },
@@ -82,6 +95,19 @@ export default {
     methods: {
          See (e) {
         window.location.href = e;
+      },
+        deleteOneProduct() {
+            console.log("ready to delete");
+            const token = this.$store.getters.token;
+            ProductService.deleteOneProduct(token, this.productId)
+                .then(() => {
+                    this.deleteMessage = "Product Deleted";
+
+                })
+                .catch((err) => {
+                    console.log("Error deleting single product", err);
+                    this.deleteMessage = "You can not delete this product because you are not the owner nor admin"
+                });
       }
     },
     

@@ -46,6 +46,8 @@ class ProductService {
         console.log("token is: " + token);
         console.log("product is: " + product);
         return new Promise((resolve, reject) => {
+
+            //this one is not working
             /*
             axios
                 .post(API_URL, {
@@ -81,25 +83,44 @@ class ProductService {
                     console.log("Service return success");
                     resolve(res.data.product);
 
-                    console.log(product.link,
-                        product.description,
-                        product.image,
-                        product.product_name,
-                        product.price);
+                    // console.log(product.link,
+                    //     product.description,
+                    //     product.image,
+                    //     product.product_name,
+                    //     product.price);
                     
                 })
                 .catch((err) => {
                     console.log("Service return failure");
                     reject(err);
-                    console.log(product.link,
-                        product.description,
-                        product.image,
-                        product.product_name,
-                        product.price);
+                    // console.log(product.link,
+                    //     product.description,
+                    //     product.image,
+                    //     product.product_name,
+                    //     product.price);
                 });
         });
 
-    }
+
+    };
+
+    static deleteOneProduct(token, id) {
+        console.log("token is: " + token);
+        console.log("id is: " + id);
+        return new Promise((resolve, reject) => {
+            axios
+                .delete(API_URL + "/" + id, { headers: { authorization: token } })
+                .then((res) => {
+                    console.log("Service return success");
+                    resolve(res.data);
+                })
+                .catch((err) => {
+                    console.log("Service return failure");
+                    reject(err);
+                });
+        });
+
+    };
 
 
 }
