@@ -46,7 +46,7 @@ class ProductService {
         console.log("token is: " + token);
         console.log("product is: " + product);
         return new Promise((resolve, reject) => {
-            
+            /*
             axios
                 .post(API_URL, {
                     headers: { authorization: token }, 
@@ -60,9 +60,22 @@ class ProductService {
                 }
                    
             )
-            
+            */
 
-            
+            axios({
+                method: "post",
+                url: API_URL,
+                headers: {
+                    authorization: token,
+                },
+                data: {
+                    link: product.link,
+                    description: product.description,
+                    image: product.image,
+                    product_name: product.product_name,
+                    price: product.price,
+                }
+                })
                 
                 .then((res) => {
                     console.log("Service return success");
