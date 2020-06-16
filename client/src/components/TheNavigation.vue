@@ -16,6 +16,9 @@
                 
                 >Signup</router-link>
             </li>
+
+            <!--signup and login link only shows when we are not logged in, 
+            meaning token in store is null -->
             <li v-if="!$store.getters.loggedIn" class="links" >
                 <router-link 
                 :to="{name:'Login'}" 
@@ -30,6 +33,7 @@
                 >Products</router-link>
             </li>
 
+<!-- we make a logout link here, only show when we are logged in -->
             <li v-if="$store.getters.loggedIn" @click="logout()" class="links">Logout</li>
         
            
