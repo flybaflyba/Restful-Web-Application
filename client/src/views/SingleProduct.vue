@@ -9,7 +9,7 @@
     <div v-if="this.deleteMessage">
             {{ this.deleteMessage }}
         </div>
-    <button @click="deleteOneProduct()"> Delete this product </button>
+    <button v-if="!this.deleteMessage" @click="deleteOneProduct()"> Delete this product </button>
 
 
     <h2>Product Name: {{ product.product_name }}</h2>
