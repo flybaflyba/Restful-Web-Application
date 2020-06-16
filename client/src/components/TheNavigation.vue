@@ -26,6 +26,7 @@
                 >Login</router-link>
             </li>
 
+<!-- prodcut page also only shows when we are logged in -->
             <li v-if="$store.getters.loggedIn" class="links" >
                 <router-link 
                 :to="{name:'Products'}" 
