@@ -31,7 +31,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "login" */ "../views/Login.vue"),
   },
-  {
+  {//remember to register product page in here 
     path: "/products",
     name: "Products",
     component: () =>
