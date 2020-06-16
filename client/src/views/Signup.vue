@@ -90,7 +90,7 @@ export default {
                         
                         console.log(user);
                         //this.message = "User Created"
-                        this.$router.push("/login")
+                        this.$router.push("/login") //bring the user to login page after then sign up 
                     }) 
                     .catch((err) => {
                         console.log(err);

@@ -65,7 +65,7 @@ export default {
                     .then(() => {
                         //this.message = "Logged in"
                         console.log("Logged In");
-                        this.$router.push("/")
+                        this.$router.push("/") //user will be redirected to home page after login 
                     }) 
                     .catch(err => {
                         console.log(err);
