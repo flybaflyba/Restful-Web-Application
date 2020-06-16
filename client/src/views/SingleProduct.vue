@@ -10,8 +10,9 @@
             {{ this.deleteMessage }}
         </div>
     <button v-if="!this.deleteMessage" @click="deleteOneProduct()"> Delete this product </button>
+    <router-link v-if="this.deleteMessage" :to="{name:'Products'}"> View All Products </router-link>
 
-
+<div v-if="!this.deleteMessage">
     <h2>Product Name: {{ product.product_name }}</h2>
 
     <p> Price: {{ product.price }}</p>
@@ -36,7 +37,7 @@
     <!-- 
     <p> Contact Creator at: {{ product.author.email }}</p> 
     -->
-
+</div>
 </div>
 </template>
 
