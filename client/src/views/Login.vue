@@ -32,7 +32,7 @@
 
 <script>
 
-import AuthServive from "@/services/auth"
+//import AuthServive from "@/services/auth"
 
 export default {
     name: "Login",
@@ -58,18 +58,37 @@ export default {
                 //this.message = "I should send data to API";
                 console.log("Sending login request");
 
-                AuthServive.login(
-                    user
-                )
-                    .then((token) => {
-                        console.log(token);
-                        this.message = "Logged in"
+                //use store to login 
+                this.$store
+                    .dispatch("login", user)
+                    .then(() => {
+                        //this.message = "Logged in"
+                        console.log("Logged In");
+                        this.$router.push("/")
                     }) 
                     .catch(err => {
                         console.log(err);
                         this.message = "Invalid Email/Password";
                         this.submitted = false;
                     });
+
+
+
+ 
+
+                //use auth service to login, not store, need to import first 
+                // AuthServive.login(
+                //     user
+                // )
+                //     .then((token) => {
+                //         console.log(token);
+                //         this.message = "Logged in"
+                //     }) 
+                //     .catch(err => {
+                //         console.log(err);
+                //         this.message = "Invalid Email/Password";
+                //         this.submitted = false;
+                //     });
 
             } else {
                 this.message = "Email or password missing";

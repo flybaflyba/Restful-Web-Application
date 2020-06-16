@@ -1,22 +1,54 @@
 <template>
+
+
     <nav class="nav">
-        <p class="logo">CS490R Litian Product Review</p>
+        <p class="logo">CS490R Project: 《Product Review》by Litian</p>
         <ul class="nav-links">
-            <li>
-                <router-link :to="{name:'Home'}" class="links">Home</router-link>
+            <li class="links">
+                <router-link :to="{name:'Home'}" >Home</router-link>
             </li>
-            <li>
-                <router-link :to="{name:'About'}" class="links">About</router-link>
+            <li class="links">
+                <router-link :to="{name:'About'}" >About</router-link>
             </li>
-            <li>
-                <router-link :to="{name:'Signup'}" class="links">Signup</router-link>
+            <li v-if="!$store.getters.loggedIn" class="links" >
+                <router-link 
+                :to="{name:'Signup'}" 
+                
+                >Signup</router-link>
             </li>
-            <li>
-                <router-link :to="{name:'Login'}" class="links">Login</router-link>
+            <li v-if="!$store.getters.loggedIn" class="links" >
+                <router-link 
+                :to="{name:'Login'}" 
+                
+                >Login</router-link>
             </li>
+
+            <li v-if="$store.getters.loggedIn" class="links" >
+                <router-link 
+                :to="{name:'Products'}" 
+                
+                >Products</router-link>
+            </li>
+
+            <li v-if="$store.getters.loggedIn" @click="logout()" class="links">Logout</li>
+        
+           
         </ul>
     </nav>
+
+   
 </template>
+
+<script>
+export default {
+    methods: {
+        logout() {
+            this.$store.dispatch("logout");
+            //this.$router.push("/");
+        }
+    },
+}
+</script>
 
 <style scoped>
 #nav {
@@ -50,6 +82,8 @@
     background-color:white;
 
     display: inline-flex;
+
+    font-weight: bold;
     
 }
 
@@ -60,6 +94,7 @@
 .links {
     padding-right: 20px;
     list-style: none;
+    font-weight: bold;
 }
 
 
