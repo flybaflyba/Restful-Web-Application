@@ -32,6 +32,7 @@
 
 <script>
 
+//no need this, we use store 
 //import AuthServive from "@/services/auth"
 
 export default {
@@ -58,7 +59,7 @@ export default {
                 //this.message = "I should send data to API";
                 console.log("Sending login request");
 
-                //use store to login 
+                //use store to login, this is how we use store 
                 this.$store
                     .dispatch("login", user)
                     .then(() => {
@@ -76,6 +77,7 @@ export default {
 
  
 
+//the folling block code is commented out because we are doing it with store 
                 //use auth service to login, not store, need to import first 
                 // AuthServive.login(
                 //     user
@@ -89,6 +91,8 @@ export default {
                 //         this.message = "Invalid Email/Password";
                 //         this.submitted = false;
                 //     });
+
+
 
             } else {
                 this.message = "Email or password missing";
