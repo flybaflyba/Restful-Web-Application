@@ -59,7 +59,7 @@ router.post('/products',function(req,res){
         image:image,
         link:link,
         created_date:created_date,
-        //updated_date:updated_date,
+        updated_date: "No updates since created",
         //user_id:user_id,
         //list_id:list_id,
         author: req.user._id

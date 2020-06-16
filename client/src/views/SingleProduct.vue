@@ -2,10 +2,22 @@
 <div>
     <h1>This is a single product view</h1>
     
-    <h2>productId is {{ productId }}</h2>
+    <h2>Product Name: {{ product.product_name }}</h2>
 
-    <p>{{ product }}</p>
+    <p> Price: {{ product.price }}</p>
+    <p> Created on: {{ product.created_date }}</p>
+    <p> Updated on: {{ product.updated_date }}</p>
     
+    <p> Link: {{ product.link }}</p>
+    
+    <p> Image link: {{ product.image }}</p>
+
+    <p> Description: {{ product.description }}</p>
+
+    <!-- 
+    <p> Contact Creator at: {{ product.author.email }}</p> 
+    -->
+
 </div>
 </template>
 
@@ -40,7 +52,7 @@ export default {
         console.log("Load Single Product Here")
         if (this.$store.getters.loggedIn) {
             const token = this.$store.getters.token;
-            ProductService.getProducts(token)
+            ProductService.getOneProduct(token, this.productId)
                 .then((data) => {
                     this.product = data;
                     this.message = null;

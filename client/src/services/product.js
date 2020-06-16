@@ -22,8 +22,26 @@ class ProductService {
                 });
         });
         
+    };
+
+    static getOneProduct(token, id) {
+        console.log("token is: " + token); 
+        console.log("id is: " + id);
+        return new Promise((resolve, reject) => {
+            axios
+                .get(API_URL + "/" + id, { headers: { authorization: token } }) 
+                .then((res) => {
+                    console.log("Service return success");
+                    resolve(res.data);
+                })
+                .catch((err) => {
+                    console.log("Service return failure");
+                    reject(err);
+                });
+        });
+
     }
 
-    
+
 }
 export default ProductService;
