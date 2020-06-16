@@ -11,10 +11,18 @@
         <div id="products">
             <div class="product" v-for="product in this.products" :key="product._id">
 
-                
-
-
+                 <router-link 
+                :to="{name:'SingleProduct', 
+                params: { productId: product._id} }"  
+                                            
+               >
                 {{product.product_name}}
+                </router-link>
+
+                <p>{{ product._id }}</p>
+
+
+                
             
             </div>
         </div>
@@ -28,7 +36,7 @@ export default {
     data() {
         return {
             products: [],
-            message: "Loading Posts",
+            message: "Loading Products",
         };
     },
     mounted() {
