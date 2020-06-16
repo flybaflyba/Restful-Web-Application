@@ -9,12 +9,13 @@ class AuthService {
       //console.log(user.email);
       axios
         .post(API_URL + "/signup", {
-          user_name: user.user_name,
-          email: user.email,
-          password: user.password,
-          last_name: user.last_name,
-          first_name: user.first_name,
-        })
+            user_name: user.user_name,
+            email: user.email,
+            password: user.password,
+            last_name: user.last_name,
+            first_name: user.first_name,
+          }
+        )
         .then((res) => {
           console.log("Service return success");
           //resolve(res.data.user);

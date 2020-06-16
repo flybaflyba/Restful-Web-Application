@@ -8,17 +8,17 @@
 
         <div class="form_row">
             <label for="last_name">Last Name </label>
-            <input type="last_name" name="last_name" v-model="last_name" />
+            <input type="text" name="last_name" v-model="last_name" />
         </div>
 
         <div class="form_row">
             <label for="first_name">First Name </label>
-            <input type="first_name" name="first_name" v-model="first_name" />
+            <input type="text" name="first_name" v-model="first_name" />
         </div>
 
         <div class="form_row">
             <label for="user_name">User Name* </label>
-            <input type="user_name" name="user_name" v-model="user_name" />
+            <input type="text" name="user_name" v-model="user_name" />
         </div>
 
         <div class="form_row">
@@ -28,7 +28,7 @@
 
         <div class="form_row">
             <label for="password">Password* </label>
-            <input type="password" name="password" v-model="password" />
+            <input type="text" name="password" v-model="password" />
         </div>
         
         <p>Required fields are marked with *</p>
