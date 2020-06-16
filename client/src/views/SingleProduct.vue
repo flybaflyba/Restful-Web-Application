@@ -12,6 +12,7 @@
     <button v-if="!this.deleteMessage" @click="deleteOneProduct()"> Delete this product </button>
     <router-link v-if="this.deleteMessage" :to="{name:'Products'}"> View All Products </router-link>
 
+<!--add this v-if so that product details not show once it's deleted-->
 <div v-if="!this.deleteMessage">
     <h2>Product Name: {{ product.product_name }}</h2>
 
