@@ -11,12 +11,11 @@
         <div id="products">
             <div class="product" v-for="product in this.products" :key="product._id">
 
-                Title: {{product.product_name}}
-            
-            <p class="content" >
-                {{ product.description }}
-            </p>
+                
 
+
+                {{product.product_name}}
+            
             </div>
         </div>
 
@@ -52,3 +51,10 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+.product {
+    padding: 50px;
+    font-size: 50px;
+}
+</style>
