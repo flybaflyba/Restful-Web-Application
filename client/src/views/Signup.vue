@@ -7,33 +7,33 @@
         <div v-if="message" id="message">{{ message }}</div>
 
         <div class="form_row">
-            <label for="last_name">Last Name </label>
-            <input type="text" name="last_name" v-model="last_name" />
+            <label class="lable" for="last_name">Last Name </label>
+            <input class="input" type="text" name="last_name" v-model="last_name" />
         </div>
 
         <div class="form_row">
-            <label for="first_name">First Name </label>
-            <input type="text" name="first_name" v-model="first_name" />
+            <label class="lable" for="first_name">First Name </label>
+            <input class="input" type="text" name="first_name" v-model="first_name" />
         </div>
 
         <div class="form_row">
-            <label for="user_name">User Name* </label>
-            <input type="text" name="user_name" v-model="user_name" />
+            <label class="lable" for="user_name">User Name* </label>
+            <input class="input" type="text" name="user_name" v-model="user_name" />
         </div>
 
         <div class="form_row">
-            <label for="email">Email* </label>
-            <input type="email" name="email" v-model="email" />
+            <label class="lable" for="email">Email* </label>
+            <input class="input" type="email" name="email" v-model="email" />
         </div>
 
         <div class="form_row">
-            <label for="password">Password* </label>
-            <input type="text" name="password" v-model="password" />
+            <label class="lable" for="password">Password* </label>
+            <input class="input" type="text" name="password" v-model="password" />
         </div>
         
         <p>Required fields are marked with *</p>
         <div class="form_row">
-            <button :disabled="submitted">
+            <button class="button" :disabled="submitted">
                 <span>Sign Up</span>
             </button>
         </div>
@@ -111,3 +111,16 @@ export default {
     }
 }
 </script>
+
+
+<style scoped>
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+
+
+</style>

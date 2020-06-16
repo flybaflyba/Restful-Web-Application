@@ -28,4 +28,22 @@ export default {
   color: #2c3e50;
 }
 
+.input {
+  border: 1px solid green;
+  padding: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  width: 100%;
+}
+
+.lable {
+    font-size: 15px;
+    display: flex;
+    text-align: center;
+}
+
+.button {
+  color: blueviolet;
+}
+
 </style>

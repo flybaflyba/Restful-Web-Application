@@ -7,18 +7,18 @@
      <div v-if="message" id="message">{{ message }}</div>
 
         <div class="form_row">
-            <label for="email">Email: </label>
-            <input type="email" name="email" v-model="email" />
+            <label class="lable" for="email">Email: </label>
+            <input class="input" type="email" name="email" v-model="email" />
         </div>
 
         <div class="form_row">
-            <label for="password">Password: </label>
-            <input type="password" name="password" v-model="password" />
+            <label class="lable" for="password">Password: </label>
+            <input class="input" type="password" name="password" v-model="password" />
         </div>
         
         <p>Required fields are marked with *</p>
         <div class="form_row">
-            <button :disabled="submitted">
+            <button class="button" :disabled="submitted">
                 <span>Login</span>
             </button>
         </div>
@@ -104,3 +104,13 @@ export default {
     }
 }
 </script>
+<style scoped>
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+</style>

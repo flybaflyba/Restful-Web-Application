@@ -11,33 +11,33 @@
 
 
         <div class="form_row">
-            <label for="product_name">Product Name: </label>
-            <input type="text" name="product_name" v-model="product_name" />
+            <label class="lable" for="product_name">Product Name: </label>
+            <input class="input" type="text" name="product_name" v-model="product_name" />
         </div>
 
         <div class="form_row">
-            <label for="price">Price: </label>
-            <input type="text" name="price" v-model="price" />
+            <label class="lable" for="price">Price: </label>
+            <input class="input" type="text" name="price" v-model="price" />
         </div>
 
         <div class="form_row">
-            <label for="image">Image Link: </label>
-            <input type="text" name="image" v-model="image" />
+            <label class="lable" for="image">Image Link: </label>
+            <input class="input" type="text" name="image" v-model="image" />
         </div>
 
         <div class="form_row">
-            <label for="link">Link: </label>
-            <input type="text" name="link" v-model="link" />
+            <label class="lable" for="link">Link: </label>
+            <input class="input" type="text" name="link" v-model="link" />
         </div>
 
         <div class="form_row">
-            <label for="description">Description: </label>
-            <input type="text" name="description" v-model="description" />
+            <label class="lable" for="description">Description: </label>
+            <input class="input" id="descriptionCell" type="text" name="description" v-model="description" />
         </div>
         
         <p>All fields must be filled</p>
         <div class="form_row">
-            <button :disabled="submitted">
+            <button class="button" :disabled="submitted">
                 <span>Create</span>
             </button>
         </div>
@@ -111,3 +111,21 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.createNewProductForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+
+
+#descriptionCell {
+    height: 200px;
+}
+
+
+
+</style>
