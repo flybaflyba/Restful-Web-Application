@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h1>This is a single product view</h1>
+    
     <div class="message" v-if="this.message">
             {{ this.message }}
         </div>
@@ -9,32 +9,45 @@
     <div v-if="this.deleteMessage">
             {{ this.deleteMessage }}
         </div>
-    <button class="button" v-if="!this.deleteMessage" @click="deleteOneProduct()"> Delete this product </button>
+    <button class="btn btn-primary" v-if="!this.deleteMessage" @click="deleteOneProduct()"> Delete this product </button>
     <router-link v-if="this.deleteMessage" :to="{name:'Products'}"> View All Products </router-link>
 
 <!--add this v-if so that product details not show once it's deleted -->
 <div v-if="!this.deleteMessage">
-    <h2>Product Name: {{ product.product_name }}</h2>
+    <h2>{{ product.product_name }}</h2>
 
-    <p> Price: {{ product.price }}</p>
-    <p> Created on: {{ product.created_date }}</p>
-    <p> Updated on: {{ product.updated_date }}</p>
-    
+<div>
+
+    <img class="img" :src= product.image  alt="Image not load" >
+<ul > 
+
+    <li> Price: {{ product.price }}</li>
+    <li> Created on: {{ product.created_date }}</li>
+    <li> Updated on: {{ product.updated_date }}</li>
+    <li @click="See(product.link)">See it on its Shop</li>
+
+</ul>
+
+
+ </div>   
     <!-- 
     <p> Link: {{ product.link }}</p> 
     -->
     
-    <p @click="See(product.link)">See it on its Shop</p>
     
     <!-- 
     <p> Image link: {{ product.image }}</p>
     -->
 
-    <p> <img class="img" :src= product.image  alt="Image not load" > </p>
 
 
-    <p> Description: {{ product.description }}</p>
 
+        <div class="product-details">
+            
+            <p class="description"> Description: {{ product.description }}</p>
+        </div>
+
+   
     <!-- 
     <p> Contact Creator at: {{ product.author.email }}</p> 
     -->
@@ -117,7 +130,40 @@ export default {
 </script>
 
 <style scoped>
-.img {
-    max-height: 200px;
+img {
+  
+    height: auto;
+    width: 40%;
+   
+
 }
+.product-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.description {
+    margin: 0 40px;
+    font-size: 20px;
+    text-align: left;
+    
+
+}
+
+ul {
+    width: 50%;
+    
+    float: right;
+    text-align: center;
+    padding: 40px;
+    font-size: 35px;
+
+    
+}
+
+li {
+    list-style-type: none;
+    text-align: left;
+}
+
 </style>

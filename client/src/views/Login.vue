@@ -18,7 +18,7 @@
         
         <p>Required fields are marked with *</p>
         <div class="form_row">
-            <button class="button" :disabled="submitted">
+            <button class="btn btn-primary" :disabled="submitted">
                 <span>Login</span>
             </button>
         </div>

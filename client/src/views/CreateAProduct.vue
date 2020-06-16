@@ -1,6 +1,6 @@
 <template>
   <div class="createNewProduct">
-    <h1>You Can Create a Product Here</h1>
+    <h2>You Can Create a Product Here</h2>
 
 
 
@@ -32,12 +32,12 @@
 
         <div class="form_row">
             <label class="lable" for="description">Description: </label>
-            <input class="input" id="descriptionCell" type="text" name="description" v-model="description" />
+            <textarea class="input" id="descriptionCell" rows="8" cols="30" name="description" v-model="description" />
         </div>
         
         <p>All fields must be filled</p>
         <div class="form_row">
-            <button class="button" :disabled="submitted">
+            <button class="btn btn-primary" :disabled="submitted">
                 <span>Create</span>
             </button>
         </div>
@@ -121,10 +121,6 @@ export default {
 }
 
 
-
-#descriptionCell {
-    height: 200px;
-}
 
 
 

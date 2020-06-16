@@ -10,7 +10,7 @@
                 Click Here to Share a Product
         </router-link>
 
-        <h2>Products</h2>
+        <h2>All Products</h2>
         <div class="message" v-if="this.message">
             {{ this.message }}
         </div>
@@ -19,7 +19,8 @@
             <div class="product" v-for="product in this.products" :key="product._id">
 
                  <router-link 
-                :to="{name:'SingleProduct', params: { productId: product._id} }"  
+                 class="list-group-item "
+                 :to="{name:'SingleProduct', params: { productId: product._id} }"  
                                         
                >
                 {{product.product_name}}
@@ -70,7 +71,8 @@ export default {
 
 <style scoped>
 .product {
-    padding: 30px;
+    padding: 10px;
     font-size: 30px;
+    width: 100%;
 }
 </style>

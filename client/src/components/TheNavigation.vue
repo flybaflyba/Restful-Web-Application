@@ -1,8 +1,15 @@
 <template>
 
+<div>
 
-    <nav class="nav">
-        <p class="logo">CS490R Project: 《Product Review》by Litian</p>
+    
+        <p class="logo">CS490R Project: Product Review》by Litian</p>
+     
+        
+
+    <nav class="navbar-default">
+        
+      
         <ul class="nav-links">
             <li class="links">
                 <router-link :to="{name:'Home'}" >Home</router-link>
@@ -37,10 +44,10 @@
 <!-- we make a logout link here, only show when we are logged in -->
             <li v-if="$store.getters.loggedIn" @click="logout()" class="links">Logout</li>
         
-           
         </ul>
-    </nav>
 
+    </nav>
+</div>
    
 </template>
 
