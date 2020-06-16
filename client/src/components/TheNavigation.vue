@@ -46,6 +46,7 @@
 <script>
 export default {
     methods: {
+        //this method will be called when we clike on logout link, this actual action is in store.js 
         logout() {
             this.$store.dispatch("logout");
             //this.$router.push("/");

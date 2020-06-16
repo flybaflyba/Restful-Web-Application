@@ -37,6 +37,7 @@ export const store = new Vuex.Store({
                  return Promise.reject(err);
                });
            },
+           //this logout action is for use of logout link in navation, this weill erase the token from local stotrage, then the brower knows we are not logged in
            logout({ commit }) {
              localStorage.removeItem("jwt_token");
              commit("logout");
