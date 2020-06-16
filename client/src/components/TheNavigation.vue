@@ -3,7 +3,7 @@
 <div>
 
     
-        <p class="logo">CS490R Project: Product Review》by Litian</p>
+        <p class="logo">CS490R Project: 《Product Review》by Litian</p>
      
         
 
