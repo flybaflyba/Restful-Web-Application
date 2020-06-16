@@ -12,7 +12,7 @@
     <p> Link: {{ product.link }}</p> 
     -->
     
-    <p @click="See(product.link)">See it on Amazon</p>
+    <p @click="See(product.link)">See it on its Shop</p>
     
     <!-- 
     <p> Image link: {{ product.image }}</p>
